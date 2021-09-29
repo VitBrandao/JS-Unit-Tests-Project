@@ -27,14 +27,28 @@ const productDetails = require('../src/productDetails');
 */
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
-  it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se productDetails é uma função.
-    // Teste se o retorno da função é um array.
-    // Teste se o array retornado pela função contém dois itens dentro.
-    // Teste se os dois itens dentro do array retornado pela função são objetos.
-    // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
-    // Teste se os dois productIds terminam com 123.
+  it('Teste para Alcool Gel e Máscara', () => {
+    expect(productDetails('Alcool Gel', 'Máscara')).toContainEqual({ name: 'Alcool Gel', details: { productId: 'Alcool Gel123' } },
+    { name: 'Máscara', details: { productId: 'Máscara123' } })
+  });
+
+  it('Teste para Vitor e Brandao', () => {
+    expect(productDetails('Vitor', 'Brandao')).toContainEqual({ name: 'Vitor', details: { productId: 'Vitor123' } },
+    { name: 'Brandao', details: { productId: 'Brandao123' } })
+  });
+
+  it('Teste para Fruta e Água', () => {
+    expect(productDetails('Fruta', 'Água')).toContainEqual({ name: 'Fruta', details: { productId: 'Fruta123' } },
+    { name: 'Água', details: { productId: 'Água123' } })
+  });
+
+  it('Teste para Arroz e Feijão', () => {
+    expect(productDetails('Arroz', 'Feijão')).toContainEqual({ name: 'Arroz', details: { productId: 'Arroz123' } },
+    { name: 'Feijão', details: { productId: 'Feijão123' } })
+  });
+
+  it('Teste para Tênis e Cueca', () => {
+    expect(productDetails('Tênis', 'Cueca')).toContainEqual({ name: 'Tênis', details: { productId: 'Tênis123' } },
+    { name: 'Cueca', details: { productId: 'Cueca123' } })
   });
 });
