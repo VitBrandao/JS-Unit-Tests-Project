@@ -24,15 +24,28 @@ const circle = require('../src/circle');
 */
 
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
-  it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
-    fail('Teste vazio!');
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se circle retorna undefined, caso o parâmetro passado não seja um número.
-    // Teste se circle retorna um objeto.
-    // Teste se o objeto retornado tem 3 propriedades.
-    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-    // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-  });
+ 
+  it('Teste com raio 1', () => {
+    expect(circle(1)).toStrictEqual({radius: 1, area: 3.14, circumference: 6.28});
+  })
+
+  it('Teste com raio 7', () => {
+    expect(circle(7)).toStrictEqual({radius: 7, area: 153.86, circumference: 43.96});
+  })
+
+  it('Teste com raio 3', () => {
+    expect(circle(3)).toStrictEqual({radius: 3, area: 28.259999999999998, circumference: 18.84});
+  })
+
+  it('Teste com raio 4', () => {
+    expect(circle(4)).toStrictEqual({radius: 4, area: 50.24, circumference: 25.12});
+  })
+
+  it('Teste com raio 2', () => {
+    expect(circle(2)).toStrictEqual({radius: 2, area: 12.56, circumference: 12.56});
+  })
+
+  it('Teste sem parâmetros', () => {
+    expect(circle()).toBe(undefined);
+  })
 });
